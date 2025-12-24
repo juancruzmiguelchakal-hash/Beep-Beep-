@@ -116,3 +116,8 @@ body {
 }
 
 /* Floating Input Placeholder Logic handled by Tailwind peer-placeholder-shown */
+
+/* Fix for mobile menu link color */
+#mobile-menu a {
+    color: #E31B23;
+}
