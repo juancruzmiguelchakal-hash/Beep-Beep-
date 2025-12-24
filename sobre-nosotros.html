@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nosotros | BeepBeep</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Estilos locales -->
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-rsssl=1>
+    
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="site-logo">
+                <img src="https://beepbeep.com.ar/wp-content/themes/popularfx/images/header/image-334.png" alt="BeepBeep Logo"/>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="sobre-nosotros.html" class="nav-link active">Sobre nosotros</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+            <div class="header-actions">
+                <button id="openModalBtnHeader" class="btn btn--outline">Descarga la App</button>
+            </div>
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== PAGE HEADER ===== -->
+        <section class="page-header container">
+            <div class="section-header">
+                <h1>Sobre <span>Nosotros</span></h1>
+                <p>Conoce la historia y el equipo detrás de BeepBeep.</p>
+            </div>
+        </section>
+
+        <!-- ===== CONTENT SECTION ===== -->
+        <section class="container" style="padding-top: 0;">
+            <p>Somos un equipo apasionado por la tecnología y el servicio, dedicados a conectar a nuestra comunidad local de Canning y San Vicente. Nacimos con la idea de hacer la vida más fácil, llevando lo que necesitas directamente a tu puerta de la forma más rápida y segura posible.</p>
+            <br>
+            <p>Nuestra misión es apoyar a los comercios locales y ofrecer una plataforma confiable tanto para usuarios como para repartidores. Creemos en el poder de la comunidad y trabajamos cada día para fortalecerla.</p>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <img src="./assets/images/logo_footer.png" alt="Logo BeepBeep">
+                        <span>BeepBeep</span>
+                    </a>
+                    <p class="footer-description">La plataforma de envíos más rápida y confiable en Canning, San Vicente.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="icon-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="icon-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navegación</h4>
+                        <a href="index.html">Inicio</a>
+                        <a href="sobre-nosotros.html">Sobre Nosotros</a>
+                        <a href="contacto.html">Contacto</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <a href="#">Política de privacidad</a>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Suscríbete</h4>
+                    <p>Recibe ofertas y novedades directamente en tu correo.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu email" required>
+                        <button type="submit" class="btn btn--primary">Suscribir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 BeepBeep. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL (Se mantiene por si se necesita) ===== -->
+    <div id="downloadModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Descarga Nuestra App</h2>
+            <p>Pide lo que quieras, cuando quieras. Disponible para tu dispositivo.</p>
+            <div class="app-buttons">
+                <a href="https://apps.apple.com/us/app/beepbeep-delivery-online/id6752507939" target="_blank" class="app-button" aria-label="Descargar en la App Store" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.beepbeepdeliverygroup.app&pcampaignid=web_share" target="_blank" class="app-button" aria-label="Obtener en Google Play" rel="noopener noreferrer">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

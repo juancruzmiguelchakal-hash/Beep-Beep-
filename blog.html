@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Local - BeepBeep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E31B23',
+                        dark: '#1A1A1A',
+                        light: '#F8F8F8',
+                        grey: '#E0E0E0'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light font-sans text-dark antialiased">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-[#FE0101] transition-all duration-300 text-white">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <!-- Logo Holder -->
+                <div
+                    class="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden group-hover:ring-2 ring-white transition-all">
+                    <img src="./assets/images/logo.png" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xl font-black tracking-tight">BeepBeep</span>
+            </a>
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="index.html" class="hover:text-gray-200 transition-colors">Inicio</a>
+                <a href="nosotros.html" class="hover:text-gray-200 transition-colors">Nosotros</a>
+                <a href="restaurantes.html" class="hover:text-gray-200 transition-colors">Comercios</a>
+                <a href="repartidores.html" class="hover:text-gray-200 transition-colors">Repartidores</a>
+                <a href="contacto.html" class="hover:text-gray-200 transition-colors">Contacto</a>
+            </div>
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white border-t border-grey p-6 flex flex-col gap-4 md:hidden shadow-xl">
+            <a href="index.html" class="hover:text-primary">Inicio</a>
+            <a href="nosotros.html" class="hover:text-primary">Nosotros</a>
+            <a href="restaurantes.html" class="hover:text-primary">Comercios</a>
+            <a href="repartidores.html" class="hover:text-primary">Repartidores</a>
+            <a href="contacto.html" class="hover:text-primary">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Header Content -->
+    <header class="pt-32 pb-16 px-6 bg-white border-b border-gray-100">
+        <div class="container mx-auto text-center max-w-4xl">
+            <div class="inline-block bg-primary/10 text-primary font-bold px-4 py-1 rounded-full text-sm mb-4">STORIES
+                OF THE SOUTH</div>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">Más que un delivery, <br> somos parte de tu
+                ciudad.</h1>
+            <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                En nuestro blog te contamos las mejores historias de Canning y San Vicente: desde entrevistas con dueños
+                de comercios históricos hasta guías de qué hacer el fin de semana en la zona sur. BeepBeep te mantiene
+                conectado con tu comunidad.
+            </p>
+        </div>
+    </header>
+
+    <!-- Featured Article -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto">
+            <div class="rounded-[24px] overflow-hidden shadow-2xl relative group h-[500px]">
+                <div class="absolute inset-0 bg-gray-900">
+                    <!-- Placeholder for large image -->
+                    <div class="w-full h-full bg-cover bg-center opacity-60"
+                        style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                    </div>
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 p-8 md:p-16 w-full md:w-2/3 bg-gradient-to-t from-black/90 to-transparent">
+                    <span class="text-primary font-bold tracking-wider text-sm">ENTREVISTA EXCLUSIVA</span>
+                    <h2
+                        class="text-3xl md:text-5xl font-black text-white mt-4 mb-4 leading-tight group-hover:underline decoration-primary">
+                        "El secreto de la mejor pizza de Canning está en el agua"</h2>
+                    <p class="text-gray-300 text-lg mb-6">Hablamos con Don Mario, fundador de "La Farola del Sur", sobre
+                        sus 40 años amasando sueños.</p>
+                    <a href="blog-pizza-canning.html"
+                        class="inline-flex items-center text-white font-bold hover:text-primary transition-colors">Leer
+                        Historia <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Articles Grid -->
+    <section class="pb-24 px-6 bg-light">
+        <div class="container mx-auto">
+            <h3 class="text-3xl font-bold mb-10 border-l-8 border-primary pl-4">Últimas Notas</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article
+                    class="bg-white rounded-[24px] overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="h-64 bg-gray-300 relative overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
+                            style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Guía de Fin de
+                            Semana</span>
+                        <h4 class="text-2xl font-bold mt-3 mb-3 text-dark group-hover:text-primary transition-colors">
+                            Top 5 cafeterías para trabajar remoto en San Vicente</h4>
+                        <p class="text-gray-500 leading-relaxed mb-4">El home office llegó para quedarse. Te mostramos
+                            los lugares con mejor WiFi y el café más rico.</p>
+                        <a href="blog-cafeterias-san-vicente.html" class="text-primary font-bold hover:underline">Leer
+                            más</a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article
+                    class="bg-white rounded-[24px] overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="h-64 bg-gray-300 relative overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
+                            style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Gastronomía</span>
+                        <h4 class="text-2xl font-bold mt-3 mb-3 text-dark group-hover:text-primary transition-colors">
+                            Ruta de la Hamburguesa: Edición Canning</h4>
+                        <p class="text-gray-500 leading-relaxed mb-4">Probamos las 10 hamburguesas más pedidas de la app
+                            y elegimos nuestra favorita.</p>
+                        <a href="blog-ruta-hamburguesa.html" class="text-primary font-bold hover:underline">Leer más</a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article
+                    class="bg-white rounded-[24px] overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+                    <div class="h-64 bg-gray-300 relative overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
+                            style="background-image: url('https://images.unsplash.com/photo-1522071823991-b5ae7264040d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Tecnología</span>
+                        <h4 class="text-2xl font-bold mt-3 mb-3 text-dark group-hover:text-primary transition-colors">
+                            ¿Cómo funciona el algoritmo de BeepBeep?</h4>
+                        <p class="text-gray-500 leading-relaxed mb-4">Entendé cómo asignamos los repartidores para que
+                            tu pedido llegue siempre caliente.</p>
+                        <a href="blog-algoritmo-beepbeep.html" class="text-primary font-bold hover:underline">Leer
+                            más</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="bg-[#0D0D0D] text-white pt-16 pb-8 border-t border-[#1A1A1A]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 text-center md:text-left">
+                <!-- Col 1: Brand -->
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="flex items-center gap-3 mb-2">
+                        <!-- Logo Placeholder -->
+                        <div
+                            class="h-24 w-24 bg-transparent flex items-center justify-center overflow-hidden">
+                            <img src="./assets/images/logo_footer.png" alt="Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-3xl font-bold tracking-tight text-white">BeepBeep</span>
+                    </div>
+                    <p class="text-sm font-medium text-gray-400 mb-4">Delivery Group - Canning & San Vicente</p>
+                    <p class="text-[#A0A0A0] text-sm leading-relaxed mb-6">
+                        Llevamos la pasión de los comercios locales a la puerta de tu casa con rapidez y confianza.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/beepbeep_ok/" target="_blank"
+                            class="text-2xl text-[#A0A0A0] hover:text-[#E31B23] transition-colors"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-2xl text-[#A0A0A0] hover:text-[#E31B23] transition-colors"><i
+                                class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Explora -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Explora</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-[#A0A0A0] hover:text-white relative group">Inicio<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="nosotros.html" class="text-[#A0A0A0] hover:text-white relative group">Sobre
+                                Nosotros<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="restaurantes.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Comercios<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="repartidores.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Repartidores<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="contacto.html" class="text-[#A0A0A0] hover:text-white relative group">Contacto<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Novedades -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Novedades</h4>
+                    <ul class="space-y-3">
+                        <li><a href="nuevos-comercios.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Nuevos Comercios<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="promociones.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Promociones<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="blog.html" class="text-[#A0A0A0] hover:text-white relative group">Blog Local<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="faq.html" class="text-[#A0A0A0] hover:text-white relative group">Preguntas
+                                Frecuentes<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="https://guiacomercial.com.ar/directorio/locales/beepbeep-delivery-group/"
+                                target="_blank" class="text-[#A0A0A0] hover:text-white relative group">Guia
+                                Comercial<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: App -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Descarga la App</h4>
+                    <p class="text-[#A0A0A0] mb-4">Disponible en tu celular</p>
+                    <div class="flex flex-col gap-3 items-center md:items-start">
+                        <button
+                            onclick="window.open('https://apps.apple.com/us/app/beepbeep-delivery-online/id6752507939', '_blank')"
+                            class="flex items-center gap-3 bg-[#1A1A1A] border border-gray-700 hover:border-[#E31B23] rounded-xl px-4 py-2 transition-all w-48 group">
+                            <i
+                                class="fa-brands fa-apple text-2xl text-white group-hover:text-[#E31B23] transition-colors"></i>
+                            <div class="text-left">
+                                <span class="block text-[10px] text-gray-400">Download on the</span>
+                                <span class="block text-sm font-bold text-white">App Store</span>
+                            </div>
+                        </button>
+                        <button
+                            onclick="window.open('https://play.google.com/store/apps/details?id=com.beepbeepdeliverygroup.app', '_blank')"
+                            class="flex items-center gap-3 bg-[#1A1A1A] border border-gray-700 hover:border-[#E31B23] rounded-xl px-4 py-2 transition-all w-48 group">
+                            <i
+                                class="fa-brands fa-google-play text-2xl text-white group-hover:text-[#E31B23] transition-colors"></i>
+                            <div class="text-left">
+                                <span class="block text-[10px] text-gray-400">GET IT ON</span>
+                                <span class="block text-sm font-bold text-white">Google Play</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="border-t border-[#333333] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[#A0A0A0] text-sm text-center md:text-left">&copy; 2025 BeepBeep Delivery Group. Todos
+                    los derechos reservados.</p>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="text-[#A0A0A0] hover:text-white transition-colors">Privacidad</a>
+                    <a href="#" class="text-[#A0A0A0] hover:text-white transition-colors">Términos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Secreto de la Pizza de Canning - Blog | BeepBeep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#E31B23', dark: '#1A1A1A', light: '#F8F8F8', grey: '#E0E0E0' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light font-sans text-dark antialiased">
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-[#FE0101] transition-all duration-300 text-white">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden group-hover:ring-2 ring-white transition-all">
+                    <img src="./assets/images/logo.png" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xl font-black tracking-tight">BeepBeep</span>
+            </a>
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="index.html" class="hover:text-gray-200 transition-colors">Inicio</a>
+                <a href="nosotros.html" class="hover:text-gray-200 transition-colors">Nosotros</a>
+                <a href="blog.html" class="text-white font-bold transition-colors">Blog</a>
+                <a href="contacto.html" class="hover:text-gray-200 transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="pt-32 pb-24 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="mb-12">
+                <span class="text-primary font-bold tracking-wider text-sm uppercase">Entrevista Exclusiva</span>
+                <h1 class="text-4xl md:text-6xl font-black mt-4 mb-6 leading-tight">"El secreto de la mejor pizza de
+                    Canning está en el agua"</h1>
+                <div class="flex items-center gap-4 text-gray-400">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=100"
+                        class="w-12 h-12 rounded-full object-cover shadow-sm">
+                    <div>
+                        <p class="font-bold text-dark">Por Redacción BeepBeep</p>
+                        <p class="text-sm">20 de Diciembre, 2025 • 5 min de lectura</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-[32px] overflow-hidden mb-12 shadow-2xl h-[400px]">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6">
+                <p class="text-xl font-medium text-dark italic">Hablamos con Don Mario, fundador de "La Bella Pizza",
+                    sobre sus 40 años amasando sueños en el corazón de Canning.</p>
+                <p>Don Mario nos recibe en su local, con la harina todavía en las manos y una sonrisa que solo tienen
+                    los que aman lo que hacen. "La gente cree que es solo harina y levadura, pero el secreto está en la
+                    paciencia y, aunque suene loco, en el agua de esta zona", nos confiesa mientras prepara el horno.
+                </p>
+                <h2 class="text-2xl font-bold text-dark mt-10 mb-4">La Tradición que no se Negocia</h2>
+                <p>Desde que abrió sus puertas en los años 80, La Bella Pizza se ha convertido en un ícono. Según Mario,
+                    la clave ha sido mantener la receta original a pesar del crecimiento explosivo de Canning. "He visto
+                    la ciudad crecer, pero mi horno de barro sigue siendo el mismo".</p>
+                <p>En BeepBeep nos enorgullece llevar estas historias y estos sabores a tu casa. Porque cada entrega no
+                    es solo comida, es una tradición que se mantiene viva.</p>
+            </div>
+
+            <div class="mt-16 pt-16 border-t border-gray-100 flex justify-between items-center">
+                <a href="blog.html"
+                    class="bg-dark text-white font-bold py-3 px-8 rounded-xl hover:bg-primary transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Volver al Blog
+                </a>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:text-primary transition-colors"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:text-primary transition-colors"><i
+                            class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="bg-[#0D0D0D] text-white pt-16 pb-8 border-t border-[#1A1A1A]">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-[#A0A0A0] text-sm">&copy; 2025 BeepBeep Delivery Group. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

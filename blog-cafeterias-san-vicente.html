@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Cafeterías para trabajar remoto - Blog | BeepBeep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#E31B23', dark: '#1A1A1A', light: '#F8F8F8', grey: '#E0E0E0' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light font-sans text-dark antialiased">
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-[#FE0101] transition-all duration-300 text-white">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden group-hover:ring-2 ring-white transition-all">
+                    <img src="./assets/images/logo.png" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xl font-black tracking-tight">BeepBeep</span>
+            </a>
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="index.html" class="hover:text-gray-200 transition-colors">Inicio</a>
+                <a href="nosotros.html" class="hover:text-gray-200 transition-colors">Nosotros</a>
+                <a href="blog.html" class="text-white font-bold transition-colors">Blog</a>
+                <a href="contacto.html" class="hover:text-gray-200 transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="pt-32 pb-24 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="mb-12">
+                <span class="text-primary font-bold tracking-wider text-sm uppercase">Guía de Fin de Semana</span>
+                <h1 class="text-4xl md:text-6xl font-black mt-4 mb-6 leading-tight">Top 5 cafeterías para trabajar
+                    remoto en San Vicente</h1>
+                <div class="flex items-center gap-4 text-gray-400">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=100"
+                        class="w-12 h-12 rounded-full object-cover shadow-sm">
+                    <div>
+                        <p class="font-bold text-dark">Por Sofía Beep</p>
+                        <p class="text-sm">18 de Diciembre, 2025 • 4 min de lectura</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-[32px] overflow-hidden mb-12 shadow-2xl h-[400px]">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6">
+                <p class="text-xl font-medium text-dark italic">El home office llegó para quedarse. Te mostramos los
+                    lugares con mejor WiFi, enchufes a mano y el café más rico para cambiar de aire.</p>
+                <p>A veces, trabajar desde casa puede ser monótono. San Vicente ha crecido enormemente en su oferta
+                    gastronómica, y hoy cuenta con espacios ideales para llevar la laptop y disfrutar de un buen brunch
+                    mientras producís.</p>
+                <h2 class="text-2xl font-bold text-dark mt-10 mb-4">Nuestra Selección</h2>
+                <ul class="list-disc pl-6 space-y-4">
+                    <li><strong>1. El Colonial:</strong> Ubicado cerca de la laguna, ofrece una paz inigualable y una
+                        conexión de fibra óptica estable.</li>
+                    <li><strong>2. Urban Coffee:</strong> Estética minimalista, muy moderno y con enchufes en casi todas
+                        las mesas individuales.</li>
+                    <li><strong>3. La Esquina del Sol:</strong> Ideal para los que aman la luz natural; sus ventanales
+                        enormes te mantienen inspirado toda la mañana.</li>
+                </ul>
+                <p>Recordá que si no querés salir de casa, muchos de estos locales están disponibles en BeepBeep para
+                    que el café te llegue a vos.</p>
+            </div>
+
+            <div class="mt-16 pt-16 border-t border-gray-100 flex justify-between items-center">
+                <a href="blog.html"
+                    class="bg-dark text-white font-bold py-3 px-8 rounded-xl hover:bg-primary transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Volver al Blog
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="bg-[#0D0D0D] text-white pt-16 pb-8 border-t border-[#1A1A1A]">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-[#A0A0A0] text-sm">&copy; 2025 BeepBeep Delivery Group. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

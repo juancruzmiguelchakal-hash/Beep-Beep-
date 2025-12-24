@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeepBeep | Delivery en Canning y San Vicente</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles (Animations) -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E31B23',
+                        dark: '#1A1A1A',
+                        light: '#F8F8F8',
+                        grey: '#E0E0E0',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'xl': '24px',
+                        '2xl': '32px',
+                    },
+                    boxShadow: {
+                        'neumorph': '10px 10px 30px #d1d9e6, -10px -10px 30px #ffffff',
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light font-sans text-dark overflow-x-hidden antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-50 transition-all duration-300 bg-[#FE0101] border-b border-transparent text-white">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <!-- Logo Holder -->
+                <div
+                    class="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden group-hover:ring-2 ring-white transition-all">
+                    <img src="./assets/images/logo.png" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <!-- <i class="fa-solid fa-bolt text-2xl text-primary transform group-hover:scale-110 transition-transform"></i> -->
+                <span class="text-xl font-black tracking-tight">BeepBeep</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-medium">
+                <a href="index.html"
+                    class="text-white font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-white">Inicio</a>
+                <a href="nosotros.html" class="hover:text-gray-200 transition-colors">Nosotros</a>
+                <a href="restaurantes.html" class="hover:text-gray-200 transition-colors">Comercios</a>
+                <a href="repartidores.html" class="hover:text-gray-200 transition-colors">Repartidores</a>
+                <a href="contacto.html" class="hover:text-gray-200 transition-colors">Contacto</a>
+            </div>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <button
+                    onclick="window.open('https://play.google.com/store/apps/details?id=com.beepbeepdeliverygroup.app', '_blank')"
+                    class="hidden md:flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:scale-105 active:scale-95 transition-all duration-300">
+                    <i class="fa-solid fa-download"></i> App
+                </button>
+
+                <button id="mobile-menu-btn" class="md:hidden text-2xl text-white hover:text-gray-200 transition-colors">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-grey p-6 flex flex-col gap-4 md:hidden">
+            <a href="nosotros.html" class="text-lg font-medium hover:text-primary">Nosotros</a>
+            <a href="restaurantes.html" class="text-lg font-medium hover:text-primary">Comercios</a>
+            <a href="repartidores.html" class="text-lg font-medium hover:text-primary">Repartidores</a>
+            <a href="contacto.html" class="text-lg font-medium hover:text-primary">Contacto</a>
+            <button class="w-full bg-primary text-white py-3 rounded-xl font-bold shadow-md">Descargar App</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-dark text-white">
+        <!-- Animated Background -->
+        <div class="map-bg absolute inset-0"></div>
+        <div class="traffic-dot" style="top: 20%; left: -5%; animation-duration: 8s;"></div>
+        <div class="traffic-dot" style="top: 50%; left: -5%; animation-duration: 12s; animation-delay: 2s;"></div>
+        <div class="traffic-dot" style="top: 80%; left: -5%; animation-duration: 15s; animation-delay: 5s;"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight animate-fade-in-up">
+                El mejor delivery en <br>
+                <span class="text-primary">San Vicente</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+                Delivery rápido y seguro en CANNING - SAN VICENTE. De la tienda a tu puerta, de forma fácil y segura.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="relative max-w-lg mx-auto mb-16 animate-pulse-red rounded-full">
+                <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                    <i class="fa-solid fa-search text-gray-400 text-lg"></i>
+                </div>
+                <input type="text" id="searchInput"
+                    class="w-full py-4 pl-12 pr-6 rounded-full bg-white/90 backdrop-blur text-dark text-lg focus:outline-none shadow-[0_0_20px_rgba(255,255,255,0.2)] focus:shadow-[0_0_30px_rgba(227,27,35,0.4)] transition-all"
+                    placeholder="Busca tu plato favorito, tienda o mandado...">
+
+                <!-- Search Results Dropdown -->
+                <div id="searchResults"
+                    class="hidden absolute top-full left-0 w-full mt-4 bg-white rounded-xl shadow-2xl overflow-hidden text-left z-50 animate-fade-in-up">
+                    <!-- Dynamic Content from JS -->
+                </div>
+            </div>
+
+            <!-- Action Cards -->
+            <div class="flex justify-center max-w-4xl mx-auto">
+                <!-- Food Card -->
+                <a href="restaurantes.html"
+                    class="group bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-xl hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer section-card w-full max-w-md">
+                    <div
+                        class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-utensils text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Pedir Comida</h3>
+                    <p class="text-gray-300 text-sm mb-4">Los mejores restaurantes a un click.</p>
+                    <span
+                        class="inline-block px-6 py-2 rounded-full border border-primary text-primary font-bold text-sm group-hover:bg-primary group-hover:text-white transition-all">
+                        Ver Comercios <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- How It Works -->
+    <section class="py-20 container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-16 animate-on-scroll">
+            Así de Fácil es <span class="text-primary">BeepBeep</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Step 1 -->
+            <div
+                class="bg-white p-8 rounded-xl shadow-neumorph text-center hover:scale-105 transition-transform duration-300 animate-on-scroll delay-100">
+                <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-mobile-screen text-4xl text-primary animate-bounce"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">1. Haz tu Pedido</h3>
+                <p class="text-gray-500">Elige lo que necesitas y confirma en segundos.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+                class="bg-white p-8 rounded-xl shadow-neumorph text-center hover:scale-105 transition-transform duration-300 animate-on-scroll delay-200">
+                <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-user-gear text-4xl text-primary animate-pulse"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">2. Nosotros Gestionamos</h3>
+                <p class="text-gray-500">Coordinamos con el repartidor al instante.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+                class="bg-white p-8 rounded-xl shadow-neumorph text-center hover:scale-105 transition-transform duration-300 animate-on-scroll delay-300">
+                <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-rocket text-4xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">3. Recíbelo Rápido</h3>
+                <p class="text-gray-500">Disfruta de tu entrega segura en tu puerta.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer Premium -->
+    <footer class="bg-[#0D0D0D] text-white pt-16 pb-8 border-t border-[#1A1A1A]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 text-center md:text-left">
+                <!-- Col 1: Brand -->
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="flex items-center gap-3 mb-2">
+                        <!-- Logo Placeholder (Image) -->
+                        <div
+                            class="h-24 w-24 bg-transparent flex items-center justify-center overflow-hidden">
+                            <img src="./assets/images/logo_footer.png" alt="Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-3xl font-bold tracking-tight text-white">BeepBeep</span>
+                    </div>
+                    <p class="text-sm font-medium text-gray-400 mb-4">Delivery Group - Canning & San Vicente</p>
+                    <p class="text-[#A0A0A0] text-sm leading-relaxed mb-6">
+                        Llevamos la pasión de los comercios locales a la puerta de tu casa con rapidez y confianza.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/beepbeep_ok/" target="_blank"
+                            class="text-2xl text-[#A0A0A0] hover:text-[#E31B23] transition-colors"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-2xl text-[#A0A0A0] hover:text-[#E31B23] transition-colors"><i
+                                class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Explora -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Explora</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-[#A0A0A0] hover:text-white relative group">Inicio<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="nosotros.html" class="text-[#A0A0A0] hover:text-white relative group">Sobre
+                                Nosotros<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="restaurantes.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Comercios<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="repartidores.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Repartidores<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="contacto.html" class="text-[#A0A0A0] hover:text-white relative group">Contacto<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Novedades -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Novedades</h4>
+                    <ul class="space-y-3">
+                        <li><a href="nuevos-comercios.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Nuevos Comercios<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="promociones.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Promociones<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="blog.html" class="text-[#A0A0A0] hover:text-white relative group">Blog Local<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="faq.html" class="text-[#A0A0A0] hover:text-white relative group">Preguntas
+                                Frecuentes<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="https://guiacomercial.com.ar/directorio/locales/beepbeep-delivery-group/"
+                                target="_blank" class="text-[#A0A0A0] hover:text-white relative group">Guia
+                                Comercial<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: App -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Descarga la App</h4>
+                    <p class="text-[#A0A0A0] mb-4">Disponible en tu celular</p>
+                    <div class="flex flex-col gap-3 items-center md:items-start">
+                        <button
+                            onclick="window.open('https://apps.apple.com/us/app/beepbeep-delivery-online/id6752507939', '_blank')"
+                            class="flex items-center gap-3 bg-[#1A1A1A] border border-gray-700 hover:border-[#E31B23] rounded-xl px-4 py-2 transition-all w-48 group">
+                            <i
+                                class="fa-brands fa-apple text-2xl text-white group-hover:text-[#E31B23] transition-colors"></i>
+                            <div class="text-left">
+                                <span class="block text-[10px] text-gray-400">Download on the</span>
+                                <span class="block text-sm font-bold text-white">App Store</span>
+                            </div>
+                        </button>
+                        <button
+                            onclick="window.open('https://play.google.com/store/apps/details?id=com.beepbeepdeliverygroup.app', '_blank')"
+                            class="flex items-center gap-3 bg-[#1A1A1A] border border-gray-700 hover:border-[#E31B23] rounded-xl px-4 py-2 transition-all w-48 group">
+                            <i
+                                class="fa-brands fa-google-play text-2xl text-white group-hover:text-[#E31B23] transition-colors"></i>
+                            <div class="text-left">
+                                <span class="block text-[10px] text-gray-400">GET IT ON</span>
+                                <span class="block text-sm font-bold text-white">Google Play</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="border-t border-[#333333] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[#A0A0A0] text-sm text-center md:text-left">&copy; 2025 BeepBeep Delivery Group. Todos
+                    los derechos reservados.</p>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="text-[#A0A0A0] hover:text-white transition-colors">Privacidad</a>
+                    <a href="#" class="text-[#A0A0A0] hover:text-white transition-colors">Términos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

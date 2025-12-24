@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cómo funciona el algoritmo? - Blog | BeepBeep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#E31B23', dark: '#1A1A1A', light: '#F8F8F8', grey: '#E0E0E0' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light font-sans text-dark antialiased">
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-[#FE0101] transition-all duration-300 text-white">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden group-hover:ring-2 ring-white transition-all">
+                    <img src="./assets/images/logo.png" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xl font-black tracking-tight">BeepBeep</span>
+            </a>
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="index.html" class="hover:text-gray-200 transition-colors">Inicio</a>
+                <a href="nosotros.html" class="hover:text-gray-200 transition-colors">Nosotros</a>
+                <a href="blog.html" class="text-white font-bold transition-colors">Blog</a>
+                <a href="contacto.html" class="hover:text-gray-200 transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="pt-32 pb-24 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="mb-12">
+                <span class="text-primary font-bold tracking-wider text-sm uppercase">Tecnología</span>
+                <h1 class="text-4xl md:text-6xl font-black mt-4 mb-6 leading-tight">¿Cómo funciona el algoritmo de
+                    BeepBeep?</h1>
+                <div class="flex items-center gap-4 text-gray-400">
+                    <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white"><i
+                            class="fa-solid fa-microchip"></i></div>
+                    <div>
+                        <p class="font-bold text-dark">Por Equipo Técnico BeepBeep</p>
+                        <p class="text-sm">20 de Diciembre, 2025 • 3 min de lectura</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="rounded-[32px] overflow-hidden mb-12 shadow-2xl h-[400px] bg-dark flex items-center justify-center">
+                <i class="fa-solid fa-code text-9xl text-primary/20"></i>
+            </div>
+
+            <div class="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6">
+                <p class="text-xl font-medium text-dark italic">Entendé cómo asignamos los repartidores para que tu
+                    pedido llegue siempre caliente y en el menor tiempo posible.</p>
+                <p>Muchos se preguntan qué pasa detrás de escena cuando hacés click en "Pedir". Todo es una orquesta de
+                    datos en tiempo real.</p>
+                <h2 class="text-2xl font-bold text-dark mt-10 mb-4">La Variables del Éxito</h2>
+                <ul class="list-disc pl-6 space-y-4">
+                    <li><strong>Distancia:</strong> Optimizamos la ruta para el repartidor más cercano al comercio.</li>
+                    <li><strong>Tiempo de preparación:</strong> El comercio nos avisa cuándo está casi listo y recién
+                        ahí avisamos al repartidor.</li>
+                    <li><strong>Clima y Tránsito:</strong> Nuestro sistema ajusta los tiempos estimados basándose en
+                        condiciones externas.</li>
+                </ul>
+                <p>En BeepBeep usamos tecnología de punta para que tu única preocupación sea disfrutar de tu comida.</p>
+            </div>
+
+            <div class="mt-16 pt-16 border-t border-gray-100 flex justify-between items-center">
+                <a href="blog.html"
+                    class="bg-dark text-white font-bold py-3 px-8 rounded-xl hover:bg-primary transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> Volver al Blog
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="bg-[#0D0D0D] text-white pt-16 pb-8 border-t border-[#1A1A1A]">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-[#A0A0A0] text-sm">&copy; 2025 BeepBeep Delivery Group. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - BeepBeep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E31B23',
+                        dark: '#1A1A1A',
+                        light: '#F8F8F8',
+                        grey: '#E0E0E0'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .accordion-content.active {
+            opacity: 1;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-btn[aria-expanded="true"] .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="bg-light font-sans text-dark antialiased">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-[#FE0101] transition-all duration-300 text-white">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <!-- Logo Holder -->
+                <div
+                    class="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden group-hover:ring-2 ring-white transition-all">
+                    <img src="./assets/images/logo.png" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <!-- <i class="fa-solid fa-bolt text-2xl text-primary transform group-hover:scale-110 transition-transform"></i> -->
+                <span class="text-xl font-black tracking-tight">BeepBeep</span>
+            </a>
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="index.html" class="hover:text-gray-200 transition-colors">Inicio</a>
+                <a href="nosotros.html" class="hover:text-gray-200 transition-colors">Nosotros</a>
+                <a href="restaurantes.html" class="hover:text-gray-200 transition-colors">Comercios</a>
+                <a href="repartidores.html" class="hover:text-gray-200 transition-colors">Repartidores</a>
+                <a href="contacto.html" class="hover:text-gray-200 transition-colors">Contacto</a>
+            </div>
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white"><i class="fa-solid fa-bars"></i></button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-white border-t border-grey p-6 flex flex-col gap-4 md:hidden shadow-xl">
+            <a href="index.html" class="hover:text-primary">Inicio</a>
+            <a href="nosotros.html" class="hover:text-primary">Nosotros</a>
+            <a href="restaurantes.html" class="hover:text-primary">Comercios</a>
+            <a href="repartidores.html" class="hover:text-primary">Repartidores</a>
+            <a href="contacto.html" class="hover:text-primary">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Header Content -->
+    <header class="pt-32 pb-16 px-6 text-center">
+        <div class="container mx-auto max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-black mb-6">Preguntas Frecuentes</h1>
+            <p class="text-lg text-gray-600">Resolvemos tus dudas para que tu única preocupación sea qué vas a comer
+                hoy.</p>
+        </div>
+    </header>
+
+    <!-- FAQ Accordion -->
+    <section class="pb-24 px-6">
+        <div class="container mx-auto max-w-3xl space-y-4">
+
+            <!-- Item 1 -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-box-open"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Cómo pido un Mandado?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        ¡Bip Bip! Muy pronto podrás pedir mandados. Estamos trabajando para integrar esta función muy
+                        pronto para que puedas enviar o retirar lo que necesites con BeepBeep. ¡Mantenete atento a las
+                        novedades en la App!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Cuánto tarda mi pedido?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        El promedio en San Vicente es de 20 a 35 minutos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Puedo pagar en efectivo?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        Sí, aceptamos efectivo al recibir, además de Mercado Pago y tarjetas de crédito/débito a través
+                        de la App.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 4: Cancelaciones -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Cómo cancelo mi pedido?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        Podés cancelar tu pedido desde la App antes de que el comercio lo acepte. Si ya fue aceptado,
+                        comunicate con nuestro soporte por WhatsApp al instante.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 5: Problemas con el pedido -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                        </div>
+                        <span class="font-bold text-lg">Me faltó un producto o el pedido es incorrecto</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        ¡Bip Bip! Sentimos el inconveniente. Sacale una foto al pedido y al ticket, y envianos un
+                        mensaje por WhatsApp. Lo resolvemos en minutos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 6: Promociones -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-tag"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Cómo uso un cupón de descuento?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        Antes de finalizar tu compra, vas a ver un campo que dice "Cupón de descuento". Escribí el
+                        código ahí y el descuento se aplicará automáticamente al total.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 7: Cambio de dirección -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Puedo cambiar la dirección de entrega?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        Si el repartidor ya está en camino, no es posible cambiar la dirección por seguridad. Si te
+                        diste cuenta apenas pediste, avisanos por el chat de soporte lo antes posible.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 8: Unirse al equipo -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Cómo puedo ser repartidor de BeepBeep?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        ¡Sumate a la flotta! Entrá a la sección 'Repartidores' en nuestra web y completá el formulario.
+                        Necesitás movilidad propia y muchas ganas de repartir.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 9: Seguimiento -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Cómo sigo mi pedido en tiempo real?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        Una vez que el repartidor retira tu pedido, vas a recibir una notificación con un enlace para
+                        ver su ubicación exacta en el mapa hasta que llegue a tu puerta.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 10: Costos de envío -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Por qué varía el costo de envío?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        El costo depende de la distancia entre el comercio y tu ubicación. También puede variar en días
+                        de lluvia o alta demanda para incentivar a nuestra flota de repartidores.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 11: Horarios -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Cuáles son los horarios de atención?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        Cada comercio tiene su propio horario. Podés consultarlos directamente en la App; si un local
+                        aparece como "Cerrado", no podrás realizar pedidos hasta su apertura.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Item 12: Factura -->
+            <div class="bg-white rounded-[24px] shadow-sm border border-gray-100 overflow-hidden">
+                <button class="accordion-btn w-full flex justify-between items-center p-6 text-left focus:outline-none"
+                    aria-expanded="false" onclick="toggleAccordion(this)">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+                        <span class="font-bold text-lg">¿Cómo solicito mi factura?</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down text-gray-400 accordion-icon"></i>
+                </button>
+                <div class="accordion-content px-6 bg-gray-50">
+                    <p class="pb-6 text-gray-600 leading-relaxed">
+                        La factura es emitida directamente por el comercio. Podés solicitarla a través del chat de la
+                        App o dejar una nota en tu pedido con tus datos de facturación.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5491100000000?text=Hola%20BeepBeep,%20tengo%20una%20duda" target="_blank"
+        class="fixed bottom-8 right-6 z-40 bg-[#E31B23] text-white px-6 py-4 rounded-full shadow-2xl hover:bg-red-700 hover:scale-105 transition-all duration-300 flex items-center gap-3 font-bold group">
+        <i class="fa-brands fa-whatsapp text-2xl group-hover:animate-pulse"></i>
+        <span class="hidden md:inline">¿Todavía tenés dudas? Chateá con nosotros</span>
+        <span class="md:hidden">Chatear</span>
+    </a>
+
+    <!-- Footer Premium -->
+    <footer class="bg-[#0D0D0D] text-white pt-16 pb-8 border-t border-[#1A1A1A]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 text-center md:text-left">
+                <!-- Col 1: Brand -->
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="flex items-center gap-3 mb-2">
+                        <!-- Logo Placeholder -->
+                        <div
+                            class="h-24 w-24 bg-transparent flex items-center justify-center overflow-hidden">
+                            <img src="./assets/images/logo_footer.png" alt="Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-3xl font-bold tracking-tight text-white">BeepBeep</span>
+                    </div>
+                    <p class="text-sm font-medium text-gray-400 mb-4">Delivery Group - Canning & San Vicente</p>
+                    <p class="text-[#A0A0A0] text-sm leading-relaxed mb-6">
+                        Llevamos la pasión de los comercios locales a la puerta de tu casa con rapidez y confianza.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/beepbeep_ok/" target="_blank"
+                            class="text-2xl text-[#A0A0A0] hover:text-[#E31B23] transition-colors"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-2xl text-[#A0A0A0] hover:text-[#E31B23] transition-colors"><i
+                                class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Explora -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Explora</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-[#A0A0A0] hover:text-white relative group">Inicio<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="nosotros.html" class="text-[#A0A0A0] hover:text-white relative group">Sobre
+                                Nosotros<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="restaurantes.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Comercios<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="repartidores.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Repartidores<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="contacto.html" class="text-[#A0A0A0] hover:text-white relative group">Contacto<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Novedades -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Novedades</h4>
+                    <ul class="space-y-3">
+                        <li><a href="nuevos-comercios.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Nuevos Comercios<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="promociones.html"
+                                class="text-[#A0A0A0] hover:text-white relative group">Promociones<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="blog.html" class="text-[#A0A0A0] hover:text-white relative group">Blog Local<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="faq.html" class="text-[#A0A0A0] hover:text-white relative group">Preguntas
+                                Frecuentes<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                        <li><a href="https://guiacomercial.com.ar/directorio/locales/beepbeep-delivery-group/"
+                                target="_blank" class="text-[#A0A0A0] hover:text-white relative group">Guia
+                                Comercial<span
+                                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#E31B23] transition-all w-0 group-hover:w-full"></span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: App -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Descarga la App</h4>
+                    <p class="text-[#A0A0A0] mb-4">Disponible en tu celular</p>
+                    <div class="flex flex-col gap-3 items-center md:items-start">
+                        <button
+                            onclick="window.open('https://apps.apple.com/us/app/beepbeep-delivery-online/id6752507939', '_blank')"
+                            class="flex items-center gap-3 bg-[#1A1A1A] border border-gray-700 hover:border-[#E31B23] rounded-xl px-4 py-2 transition-all w-48 group">
+                            <i
+                                class="fa-brands fa-apple text-2xl text-white group-hover:text-[#E31B23] transition-colors"></i>
+                            <div class="text-left">
+                                <span class="block text-[10px] text-gray-400">Download on the</span>
+                                <span class="block text-sm font-bold text-white">App Store</span>
+                            </div>
+                        </button>
+                        <button
+                            onclick="window.open('https://play.google.com/store/apps/details?id=com.beepbeepdeliverygroup.app', '_blank')"
+                            class="flex items-center gap-3 bg-[#1A1A1A] border border-gray-700 hover:border-[#E31B23] rounded-xl px-4 py-2 transition-all w-48 group">
+                            <i
+                                class="fa-brands fa-google-play text-2xl text-white group-hover:text-[#E31B23] transition-colors"></i>
+                            <div class="text-left">
+                                <span class="block text-[10px] text-gray-400">GET IT ON</span>
+                                <span class="block text-sm font-bold text-white">Google Play</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="border-t border-[#333333] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[#A0A0A0] text-sm text-center md:text-left">&copy; 2025 BeepBeep Delivery Group. Todos
+                    los derechos reservados.</p>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="text-[#A0A0A0] hover:text-white transition-colors">Privacidad</a>
+                    <a href="#" class="text-[#A0A0A0] hover:text-white transition-colors">Términos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Inline script to handle accordion to ensure it works immediately
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            // Close all other accordions
+            document.querySelectorAll('.accordion-btn').forEach(otherBtn => {
+                if (otherBtn !== button) {
+                    otherBtn.setAttribute('aria-expanded', 'false');
+                    otherBtn.nextElementSibling.style.maxHeight = null;
+                    otherBtn.nextElementSibling.classList.remove('active');
+                }
+            });
+
+            // Toggle current
+            button.setAttribute('aria-expanded', !isExpanded);
+            if (!isExpanded) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.classList.add('active');
+            } else {
+                content.style.maxHeight = null;
+                content.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
