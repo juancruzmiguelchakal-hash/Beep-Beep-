@@ -254,59 +254,35 @@ body {
     }
 
     .slide-title {
-        font-size: 2rem; /* 32px */
+        font-size: 1.75rem; /* 28px */
     }
 
     .slide-subtitle {
-        font-size: 1rem; /* 16px */
+        font-size: 0.875rem; /* 14px */
+        padding: 0 8px; /* Add some horizontal padding */
     }
 
     .hero-slider .swiper-button-prev,
-
-        .hero-slider .swiper-button-next {
-
-            display: none; /* Hide arrows on mobile for swipe */
-
-        }
-
+    .hero-slider .swiper-button-next {
+        display: none; /* Hide arrows on mobile for swipe */
     }
+}
 
-    
+/* --- Autoplay Progress Bar Styles --- */
+.swiper-autoplay-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 10;
+}
 
-    /* --- Autoplay Progress Bar Styles --- */
-
-    .swiper-autoplay-progress {
-
-        position: absolute;
-
-        bottom: 0;
-
-        left: 0;
-
-        width: 100%;
-
-        height: 4px;
-
-        background: rgba(255, 255, 255, 0.2);
-
-        z-index: 10;
-
-    }
-
-    
-
-    .swiper-autoplay-progress .progress-fill {
-
-        width: 100%;
-
-        height: 100%;
-
-        background: #E31B23; /* Use primary red color */
-
-        transform-origin: left;
-
-        transform: scaleX(0);
-
-    }
-
-    
+.swiper-autoplay-progress .progress-fill {
+    width: 100%;
+    height: 100%;
+    background: #E31B23; /* Use primary red color */
+    transform-origin: left;
+    transform: scaleX(0);
+}
