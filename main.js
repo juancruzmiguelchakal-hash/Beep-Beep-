@@ -2,11 +2,67 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
+    initHeroSlider(); // Add this call
     initSearch();
     initFilters();
     initAnimations();
     initForms();
 });
+
+// Function to initialize the hero slider
+function initHeroSlider() {
+    const sliderContainer = document.querySelector('.hero-slider');
+    if (sliderContainer) {
+        const progressFill = sliderContainer.querySelector('.swiper-autoplay-progress .progress-fill');
+
+        const swiper = new Swiper(sliderContainer, {
+            // Optional parameters
+            loop: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+
+            // Autoplay as requested
+            autoplay: {
+                delay: 10000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true, // Pauses on hover
+            },
+
+            // Pagination as requested
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Navigation arrows as requested
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // Event listeners for progress bar
+            on: {
+                autoplayTimeLeft(s, time, progress) {
+                    if (progressFill) {
+                        progressFill.style.transform = `scaleX(${1 - progress})`;
+                    }
+                },
+                slideChange() {
+                    // Reset progress on slide change if needed, though autoplayTimeLeft handles it well
+                    if (progressFill) {
+                        progressFill.style.transition = 'transform 0.1s linear'; // quick reset
+                        progressFill.style.transform = 'scaleX(0)';
+                        setTimeout(() => {
+                            progressFill.style.transition = ''; // remove temporary transition
+                        }, 100);
+                    }
+                }
+            }
+        });
+    }
+}
 
 // Mock Database
 const MOCK_DB = [

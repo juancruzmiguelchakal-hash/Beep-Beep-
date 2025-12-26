@@ -121,3 +121,192 @@ body {
 #mobile-menu a {
     color: #E31B23;
 }
+
+/* --- Hero Slider Styles --- */
+.hero-slider {
+    width: 100%;
+    height: 60vh; /* Default height for desktop */
+    border-radius: 24px; /* Matches the theme's border-radius */
+    overflow: hidden;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #1A1A1A; /* Dark background as requested */
+
+    /* Center slide content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; /* Dark overlay effect */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.swiper-slide-active .slide-bg {
+    transform: scale(1.05); /* Ken Burns effect on active slide */
+}
+
+.slide-text {
+    position: relative;
+    z-index: 10;
+    color: #fff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%); /* Gradient for text legibility */
+}
+
+.slide-title {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 900;
+    margin-bottom: 0.5rem; /* 8px */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.slide-subtitle {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 300;
+    max-width: 600px;
+    margin-bottom: 1.5rem; /* 24px */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.slide-button {
+    background-color: #E31B23; /* Primary red color */
+    color: white;
+    padding: 12px 28px;
+    border-radius: 9999px; /* pill shape */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(227, 27, 35, 0.4);
+}
+
+.slide-button:hover {
+    background-color: #ff3c44;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(227, 27, 35, 0.6);
+}
+
+/* Swiper Navigation & Pagination */
+.hero-slider .swiper-button-prev,
+.hero-slider .swiper-button-next {
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.hero-slider:hover .swiper-button-prev,
+.hero-slider:hover .swiper-button-next {
+    opacity: 1;
+}
+
+.hero-slider .swiper-button-prev::after,
+.hero-slider .swiper-button-next::after {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.hero-slider .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.hero-slider .swiper-pagination-bullet-active {
+    background-color: #E31B23;
+    width: 24px;
+    border-radius: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 70vh; /* Taller on mobile */
+        border-radius: 0; /* Full-width on mobile */
+    }
+
+    .slide-title {
+        font-size: 2rem; /* 32px */
+    }
+
+    .slide-subtitle {
+        font-size: 1rem; /* 16px */
+    }
+
+    .hero-slider .swiper-button-prev,
+
+        .hero-slider .swiper-button-next {
+
+            display: none; /* Hide arrows on mobile for swipe */
+
+        }
+
+    }
+
+    
+
+    /* --- Autoplay Progress Bar Styles --- */
+
+    .swiper-autoplay-progress {
+
+        position: absolute;
+
+        bottom: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 4px;
+
+        background: rgba(255, 255, 255, 0.2);
+
+        z-index: 10;
+
+    }
+
+    
+
+    .swiper-autoplay-progress .progress-fill {
+
+        width: 100%;
+
+        height: 100%;
+
+        background: #E31B23; /* Use primary red color */
+
+        transform-origin: left;
+
+        transform: scaleX(0);
+
+    }
+
+    

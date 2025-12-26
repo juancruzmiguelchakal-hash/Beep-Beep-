@@ -15,6 +15,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Custom Styles (Animations) -->
     <link rel="stylesheet" href="styles.css">
 
@@ -57,7 +60,7 @@
             <a href="index.html" class="flex items-center gap-2 group">
                 <!-- Logo Holder -->
                 <div
-                    class="w-20 h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden group-hover:ring-2 ring-white transition-all">
+                    class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-lg flex items-center justify-center overflow-hidden group-hover:ring-2 ring-white transition-all">
                     <img src="./assets/images/logo.png" alt="Logo" class="w-full h-full object-cover">
                 </div>
                 <!-- <i class="fa-solid fa-bolt text-2xl text-primary transform group-hover:scale-110 transition-transform"></i> -->
@@ -162,7 +165,7 @@
             <!-- Step 1 -->
             <div
                 class="bg-white p-8 rounded-xl shadow-neumorph text-center hover:scale-105 transition-transform duration-300 animate-on-scroll delay-100">
-                <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fa-solid fa-mobile-screen text-4xl text-primary animate-bounce"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">1. Haz tu Pedido</h3>
@@ -172,7 +175,7 @@
             <!-- Step 2 -->
             <div
                 class="bg-white p-8 rounded-xl shadow-neumorph text-center hover:scale-105 transition-transform duration-300 animate-on-scroll delay-200">
-                <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fa-solid fa-user-gear text-4xl text-primary animate-pulse"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">2. Nosotros Gestionamos</h3>
@@ -182,7 +185,7 @@
             <!-- Step 3 -->
             <div
                 class="bg-white p-8 rounded-xl shadow-neumorph text-center hover:scale-105 transition-transform duration-300 animate-on-scroll delay-300">
-                <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fa-solid fa-rocket text-4xl text-primary"></i>
                 </div>
                 <h3 class="text-xl font-bold mb-3">3. Recíbelo Rápido</h3>
@@ -191,7 +194,56 @@
         </div>
     </section>
 
+    <!-- Hero Slider -->
+    <section class="w-full rounded-2xl overflow-hidden container mx-auto mb-20">
+        <div class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <!-- Slide 1: Buona -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="./assets/images/comercios/Buona/buona1.jpg" alt="Promo Buona Hamburguesas" class="slide-bg">
+                        <div class="slide-text">
+                            <h2 class="slide-title">Hamburguesas Gourmet</h2>
+                            <p class="slide-subtitle">Las mejores hamburguesas artesanales, con ingredientes frescos y combinaciones únicas.</p>
+                            <a href="menu-buona.html" class="slide-button">IR AL MENÚ</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2: Brumée -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="./assets/images/comercios/Brumée/brumee.jpg" alt="Promo Brumée" class="slide-bg">
+                        <div class="slide-text">
+                            <h2 class="slide-title">Café de Especialidad y Pastelería</h2>
+                            <p class="slide-subtitle">Date un gusto con nuestros postres artesanales y el mejor café.</p>
+                            <a href="menu-brumee.html" class="slide-button">IR AL MENÚ</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3: Simon Pasteleria -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="./assets/images/comercios/Simon Pasteleria/simon-pasteleria.jpg" alt="Promo Simon Pasteleria" class="slide-bg">
+                        <div class="slide-text">
+                            <h2 class="slide-title">La Dulzura que Mereces</h2>
+                            <p class="slide-subtitle">Tortas, postres y delicias para celebrar cada momento especial.</p>
+                            <a href="menu-simon-pasteleria.html" class="slide-button">IR AL MENÚ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
 
+            <!-- Autoplay Progress Bar -->
+            <div class="swiper-autoplay-progress">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Premium -->
     <footer class="bg-[#0D0D0D] text-white pt-16 pb-8 border-t border-[#1A1A1A]">
@@ -202,7 +254,7 @@
                     <div class="flex items-center gap-3 mb-2">
                         <!-- Logo Placeholder (Image) -->
                         <div
-                            class="h-24 w-24 bg-transparent flex items-center justify-center overflow-hidden">
+                            class="h-20 w-20 md:h-24 md:w-24 bg-transparent flex items-center justify-center overflow-hidden">
                             <img src="./assets/images/logo_footer.png" alt="Logo" class="w-full h-full object-contain">
                         </div>
                         <span class="text-3xl font-bold tracking-tight text-white">BeepBeep</span>
@@ -312,7 +364,7 @@
             </div>
         </div>
     </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 
