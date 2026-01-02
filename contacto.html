@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -38,10 +39,12 @@
             <!-- Form -->
             <div class="bg-white p-8 rounded-[32px] shadow-lg">
                 <h3 class="text-2xl font-bold mb-6">Mensaje Directo</h3>
-                <form action="https://formsubmit.co/info@beepbeep.com.ar" method="POST" class="space-y-6">
-                    <!-- FormSubmit Configuration -->
+                <form action="verify.php" method="POST" class="space-y-6">
+                    <!-- reCAPTCHA v3 token -->
+                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+
+                    <!-- FormSubmit Configuration (Optional if using verify.php, but good for reference) -->
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://beepbeep.example.com/thanks.html">
                     <input type="hidden" name="_template" value="table">
 
                     <div class="relative">
@@ -66,21 +69,7 @@
                             class="absolute left-4 top-4 text-gray-500 text-xs uppercase font-bold tracking-wide transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary">Mensaje</label>
                     </div>
 
-                    <!-- Math Captcha -->
-                    <div class="relative">
-                        <div class="flex items-center gap-4">
-                            <span id="captcha-question" class="text-lg font-bold text-gray-600 select-none"></span>
-                            <div class="relative flex-1">
-                                <input type="number" id="captcha-answer" required
-                                    class="peer w-full bg-light border-b-2 border-grey p-4 pt-6 rounded-t-xl focus:outline-none focus:border-primary transition-all placeholder-transparent"
-                                    placeholder="Resultado">
-                                <label for="captcha-answer"
-                                    class="absolute left-4 top-4 text-gray-500 text-xs uppercase font-bold tracking-wide transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary">Resultado</label>
-                            </div>
-                        </div>
-                        <p id="captcha-error" class="text-primary text-xs font-bold mt-1 hidden">¡Resultado incorrecto!
-                            Intenta de nuevo.</p>
-                    </div>
+
 
                     <button type="submit"
                         class="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg hover:bg-red-600 hover:shadow-xl transition-all hover:-translate-y-1">
@@ -89,50 +78,20 @@
                 </form>
 
                 <script>
+                    const SITE_KEY = 'YOUR_SITE_KEY';
+
                     document.addEventListener('DOMContentLoaded', () => {
                         const form = document.querySelector('form[action^="https://formsubmit.co"]');
-                        const questionEl = document.getElementById('captcha-question');
-                        const answerEl = document.getElementById('captcha-answer');
-                        const errorEl = document.getElementById('captcha-error');
-
-                        let num1, num2, correctAnswer;
-
-                        function generateCaptcha() {
-                            const isAddition = Math.random() > 0.5;
-                            let n1 = Math.floor(Math.random() * 10) + 1;
-                            let n2 = Math.floor(Math.random() * 10) + 1;
-
-                            if (isAddition) {
-                                correctAnswer = n1 + n2;
-                                questionEl.textContent = `${n1} + ${n2} = ?`;
-                            } else {
-                                // Ensure non-negative result for simplicity
-                                if (n1 < n2) [n1, n2] = [n2, n1];
-                                correctAnswer = n1 - n2;
-                                questionEl.textContent = `${n1} - ${n2} = ?`;
-                            }
-
-                            answerEl.value = '';
-                            errorEl.classList.add('hidden');
-                        }
-
-                        // Init
-                        generateCaptcha();
 
                         form.addEventListener('submit', (e) => {
-                            const userAnswer = parseInt(answerEl.value, 10);
+                            e.preventDefault();
 
-                            if (userAnswer !== correctAnswer) {
-                                e.preventDefault();
-                                errorEl.classList.remove('hidden');
-                                // Shake effect
-                                answerEl.classList.add('animate-pulse', 'border-primary');
-                                setTimeout(() => {
-                                    answerEl.classList.remove('animate-pulse', 'border-primary');
-                                }, 500);
-                                return false;
-                            }
-                            // Allow submission
+                            grecaptcha.ready(function () {
+                                grecaptcha.execute(SITE_KEY, { action: 'submit' }).then(function (token) {
+                                    document.getElementById('g-recaptcha-response').value = token;
+                                    form.submit();
+                                });
+                            });
                         });
                     });
                 </script>

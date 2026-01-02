@@ -563,7 +563,7 @@ function renderGrid(items, container) {
 
         card.innerHTML = `
             <div class="h-48 bg-cover bg-center relative" style="background-image: url('${item.img}')">
-                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1 ${statusClass} text-white">
+                <div class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 ${statusClass} text-white">
                     <i class="fa-solid ${statusIcon}"></i>
                     ${status}
                 </div>
