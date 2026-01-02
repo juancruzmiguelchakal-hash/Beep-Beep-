@@ -455,6 +455,40 @@ function renderSearchResults(results, container) {
     });
 }
 
+// Function to check if a restaurant is currently open
+function isRestaurantOpen(schedule) {
+    if (!schedule) return null; // No schedule available
+
+    const now = new Date();
+    const dayNames = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'];
+    const currentDay = dayNames[now.getDay()];
+    const currentTime = now.getHours() * 60 + now.getMinutes(); // Time in minutes
+
+    const daySchedule = schedule[currentDay];
+    if (!daySchedule || daySchedule === 'Cerrado') {
+        return false;
+    }
+
+    // Parse time range like "09:00 - 18:00"
+    const [openTime, closeTime] = daySchedule.split(' - ');
+    if (!openTime || !closeTime) return false;
+
+    const [openHour, openMin] = openTime.split(':').map(Number);
+    const [closeHour, closeMin] = closeTime.split(':').map(Number);
+
+    const openMinutes = openHour * 60 + openMin;
+    const closeMinutes = closeHour * 60 + closeMin;
+
+    return currentTime >= openMinutes && currentTime <= closeMinutes;
+}
+
+// Function to get restaurant status text
+function getRestaurantStatus(schedule) {
+    if (!schedule) return 'Horario no disponible';
+    const isOpen = isRestaurantOpen(schedule);
+    return isOpen ? 'Abierto ahora' : 'Cerrado';
+}
+
 function initFilters() {
     const buttons = document.querySelectorAll('.filter-btn');
     const grid = document.getElementById('restaurantGrid');
@@ -483,30 +517,17 @@ function initFilters() {
                 let filtered = [...MOCK_DB]; // Clone to not mutate
 
                 switch (filterType) {
-                    case 'fastest':
-                        // Extract min time: "15-25 min" -> 15
-                        filtered.sort((a, b) => {
-                            const timeA = parseInt(a.time.split('-')[0]);
-                            const timeB = parseInt(b.time.split('-')[0]);
-                            return timeA - timeB;
-                        });
-                        break;
-                    case 'famous':
-                        // Sort by rating desc
+                    case 'best-rated':
+                        // Sort by rating desc (changed from 'famous')
                         filtered.sort((a, b) => b.rating - a.rating);
-                        break;
-                    case 'cheapest':
-                        // Sort by cost asc
-                        filtered.sort((a, b) => a.cost - b.cost);
                         break;
                     case 'promo':
                         // Filter by hasPromo
                         filtered = filtered.filter(item => item.hasPromo);
                         break;
                     case 'open':
-                        // Mock: shuffle to show "random open" places or just all for now
-                        // Let's just return all but maybe randomly shuffled for variety
-                        filtered.sort(() => Math.random() - 0.5);
+                        // Filter only open restaurants
+                        filtered = filtered.filter(item => isRestaurantOpen(item.schedule) === true);
                         break;
                     case 'all':
                     default:
@@ -534,11 +555,17 @@ function renderGrid(items, container) {
         };
         card.addEventListener('click', goToMenu);
 
+        // Get status
+        const status = getRestaurantStatus(item.schedule);
+        const isOpen = isRestaurantOpen(item.schedule);
+        const statusClass = isOpen ? 'bg-green-500' : (item.schedule ? 'bg-gray-500' : 'bg-yellow-500');
+        const statusIcon = isOpen ? 'fa-door-open' : 'fa-door-closed';
+
         card.innerHTML = `
             <div class="h-48 bg-cover bg-center relative" style="background-image: url('${item.img}')">
-                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1">
-                    <i class="fa-solid fa-clock text-primary"></i>
-                    ${item.time}
+                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1 ${statusClass} text-white">
+                    <i class="fa-solid ${statusIcon}"></i>
+                    ${status}
                 </div>
             </div>
             <div class="p-6">
