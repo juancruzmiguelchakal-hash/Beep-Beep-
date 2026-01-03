@@ -42,10 +42,43 @@ function loadFooter() {
 function initMobileMenu() {
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
 
     if (mobileBtn && mobileMenu) {
-        mobileBtn.addEventListener('click', () => {
+        // Toggle menu
+        mobileBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             mobileMenu.classList.toggle('hidden');
+            // Change icon if needed
+            const icon = mobileBtn.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-xmark');
+            }
+        });
+
+        // Close when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-xmark');
+                }
+            });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-xmark');
+                }
+            }
         });
     }
 }

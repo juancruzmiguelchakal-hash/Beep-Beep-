@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -39,13 +39,13 @@
             <!-- Form -->
             <div class="bg-white p-8 rounded-[32px] shadow-lg">
                 <h3 class="text-2xl font-bold mb-6">Mensaje Directo</h3>
-                <form action="verify.php" method="POST" class="space-y-6">
-                    <!-- reCAPTCHA v3 token -->
-                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="space-y-6">
+                    <!-- Web3Forms Configuration -->
+                    <input type="hidden" name="access_key" value="975a72a6-3280-40f5-a791-2e85376b6f70">
+                    <input type="hidden" name="subject" value="Nuevo contacto desde BeepBeep">
+                    <input type="hidden" name="from_name" value="BeepBeep Website">
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
 
-                    <!-- FormSubmit Configuration (Optional if using verify.php, but good for reference) -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
 
                     <div class="relative">
                         <input type="text" id="name" name="name" required
@@ -68,8 +68,7 @@
                         <label for="message"
                             class="absolute left-4 top-4 text-gray-500 text-xs uppercase font-bold tracking-wide transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-4 peer-focus:top-1 peer-focus:text-xs peer-focus:text-primary">Mensaje</label>
                     </div>
-
-
+                    <div id="form-result" class="hidden text-center p-4 rounded-xl font-bold"></div>
 
                     <button type="submit"
                         class="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg hover:bg-red-600 hover:shadow-xl transition-all hover:-translate-y-1">
@@ -78,20 +77,58 @@
                 </form>
 
                 <script>
-                    const SITE_KEY = 'YOUR_SITE_KEY';
-
                     document.addEventListener('DOMContentLoaded', () => {
-                        const form = document.querySelector('form[action^="https://formsubmit.co"]');
+                        const form = document.getElementById('contact-form');
+                        const result = document.getElementById('form-result');
+                        const submitBtn = form.querySelector('button[type="submit"]');
 
-                        form.addEventListener('submit', (e) => {
+                        form.addEventListener('submit', function (e) {
                             e.preventDefault();
 
-                            grecaptcha.ready(function () {
-                                grecaptcha.execute(SITE_KEY, { action: 'submit' }).then(function (token) {
-                                    document.getElementById('g-recaptcha-response').value = token;
-                                    form.submit();
+                            submitBtn.disabled = true;
+                            const originalBtnText = submitBtn.innerHTML;
+                            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Enviando...';
+                            result.classList.add('hidden');
+
+                            const formData = new FormData(form);
+                            const object = Object.fromEntries(formData);
+                            const json = JSON.stringify(object);
+
+                            fetch('https://api.web3forms.com/submit', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Accept': 'application/json'
+                                },
+                                body: json
+                            })
+                                .then(async (response) => {
+                                    let json = await response.json();
+                                    if (response.status == 200) {
+                                        result.innerHTML = "¡Mensaje enviado con éxito!";
+                                        result.classList.remove('hidden', 'bg-red-100', 'text-red-600');
+                                        result.classList.add('bg-green-100', 'text-green-600');
+                                        form.reset();
+                                    } else {
+                                        console.log(response);
+                                        result.innerHTML = json.message || "Error al enviar el mensaje.";
+                                        result.classList.remove('hidden', 'bg-green-100', 'text-green-600');
+                                        result.classList.add('bg-red-100', 'text-red-600');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.log(error);
+                                    result.innerHTML = "Algo salió mal. Por favor intenta más tarde.";
+                                    result.classList.remove('hidden', 'bg-green-100', 'text-green-600');
+                                    result.classList.add('bg-red-100', 'text-red-600');
+                                })
+                                .then(function () {
+                                    submitBtn.disabled = false;
+                                    submitBtn.innerHTML = originalBtnText;
+                                    setTimeout(() => {
+                                        result.classList.add('hidden');
+                                    }, 5000);
                                 });
-                            });
                         });
                     });
                 </script>
