@@ -2,14 +2,14 @@
 <html lang="es">
 
 <head>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burger Station - Menú | BeepBeep</title>
+    <title>Green Eat - Menú | BeepBeep</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <script>
         tailwind.config = {
             theme: {
@@ -32,21 +32,21 @@
     <!-- Restaurant Hero -->
     <header class="relative h-[50vh] min-h-[400px]">
         <div
-            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1200')] bg-cover bg-center">
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200')] bg-cover bg-center">
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
         <div class="absolute bottom-0 left-0 w-full p-8 md:p-12">
             <div class="container mx-auto flex flex-col md:flex-row items-end justify-between gap-6">
                 <div>
                     <span
-                        class="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Burgers</span>
-                    <h1 class="text-4xl md:text-6xl font-black text-white mb-2">Burger Station</h1>
+                        class="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Saludable</span>
+                    <h1 class="text-4xl md:text-6xl font-black text-white mb-2">Green Eat</h1>
                     <div class="flex items-center gap-4 text-white/90 text-sm font-medium">
-                        <span><i class="fa-solid fa-star text-yellow-400"></i> 4.8 (500+)</span>
+                        <span><i class="fa-solid fa-star text-yellow-400"></i> 4.6</span>
                         <span>•</span>
-                        <span><i class="fa-solid fa-clock"></i> 15-25 min</span>
+                        <span><i class="fa-solid fa-clock"></i> 10-20 min</span>
                         <span>•</span>
-                        <span>$$$</span>
+                        <span>$$</span>
                     </div>
                 </div>
                 <!-- Unified Download Button -->
@@ -90,8 +90,8 @@
 
     <!-- Menu Section -->
     <section class="container mx-auto px-6 py-12">
-        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><i class="fa-solid fa-utensils text-primary"></i>
-            Menú Destacado</h2>
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><i class="fa-solid fa-leaf text-primary"></i> Menú
+            Green</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Item 1 -->
@@ -99,11 +99,11 @@
                 class="bg-white p-6 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group">
                 <div class="flex justify-between items-start mb-4">
                     <div>
-                        <h3 class="text-xl font-bold text-dark mb-1">Doble Bacon Cheese</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">Doble medallón de carne, cheddar fundido,
-                            panceta crocante y salsa BBQ.</p>
+                        <h3 class="text-xl font-bold text-dark mb-1">Ensalada Caesar</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Lechuga, croutons, queso parmesano y aderezo
+                            caesar casero con pollo grillé.</p>
                     </div>
-                    <span class="text-xl font-black text-primary">$4.500</span>
+                    <span class="text-xl font-black text-primary">$5.500</span>
                 </div>
                 <button onclick="document.getElementById('menu-download-btn').click()"
                     class="w-full mt-4 bg-gray-100 hover:bg-dark text-dark hover:text-white font-bold py-3 rounded-xl transition-all">
@@ -116,11 +116,11 @@
                 class="bg-white p-6 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group">
                 <div class="flex justify-between items-start mb-4">
                     <div>
-                        <h3 class="text-xl font-bold text-dark mb-1">Station Classic</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">Nuestra clásica con lechuga, tomate, cebolla
-                            morada y salsa especial de la casa.</p>
+                        <h3 class="text-xl font-bold text-dark mb-1">Bowl Proteico</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Quinoa, huevo, palta, tomates cherry, espinaca
+                            y semillas de girasol.</p>
                     </div>
-                    <span class="text-xl font-black text-primary">$3.800</span>
+                    <span class="text-xl font-black text-primary">$6.200</span>
                 </div>
                 <button onclick="document.getElementById('menu-download-btn').click()"
                     class="w-full mt-4 bg-gray-100 hover:bg-dark text-dark hover:text-white font-bold py-3 rounded-xl transition-all">
@@ -133,11 +133,11 @@
                 class="bg-white p-6 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group">
                 <div class="flex justify-between items-start mb-4">
                     <div>
-                        <h3 class="text-xl font-bold text-dark mb-1">Crispy Onion</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">Medallón simple, aros de cebolla fritos,
-                            cheddar y mayonesa ahumada.</p>
+                        <h3 class="text-xl font-bold text-dark mb-1">Wrap de Pollo</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Tortilla integral, pollo, queso crema, rúcula y
+                            tomates secos.</p>
                     </div>
-                    <span class="text-xl font-black text-primary">$4.200</span>
+                    <span class="text-xl font-black text-primary">$4.800</span>
                 </div>
                 <button onclick="document.getElementById('menu-download-btn').click()"
                     class="w-full mt-4 bg-gray-100 hover:bg-dark text-dark hover:text-white font-bold py-3 rounded-xl transition-all">
@@ -150,9 +150,9 @@
                 class="bg-white p-6 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group">
                 <div class="flex justify-between items-start mb-4">
                     <div>
-                        <h3 class="text-xl font-bold text-dark mb-1">Papas Station</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed">Porción grande de papas fritas con cheddar,
-                            panceta y verdeo.</p>
+                        <h3 class="text-xl font-bold text-dark mb-1">Jugo Detox Verde</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Espinaca, manzana verde, pepino y limón. 500ml.
+                        </p>
                     </div>
                     <span class="text-xl font-black text-primary">$2.500</span>
                 </div>
@@ -166,8 +166,8 @@
 
     <!-- Footer Component -->
     <div id="footer-placeholder"></div>
-    <script src="loadComponents.js"></script>
-    <script src="main.js"></script>
+    <script src="../loadComponents.js"></script>
+    <script src="../main.js"></script>
 </body>
 
 </html>

@@ -2,14 +2,14 @@
 <html lang="es">
 
 <head>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rural Alfajores - Menú | BeepBeep</title>
+    <title>Fonos Argentina - Menú | BeepBeep</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <script>
         tailwind.config = {
             theme: {
@@ -32,15 +32,15 @@
     <!-- Restaurant Hero -->
     <header class="relative h-[50vh] min-h-[400px]">
         <div
-            class="absolute inset-0 bg-[url('./assets/images/comercios/Alfajores Artesanales/rural-alfajores.jpg')] bg-cover bg-center">
+            class="absolute inset-0 bg-[url('../assets/images/comercios/Fonos/fonos-argentina.jpg')] bg-cover bg-center">
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
         <div class="absolute bottom-0 left-0 w-full p-8 md:p-12">
             <div class="container mx-auto flex flex-col md:flex-row items-end justify-between gap-6">
                 <div>
                     <span
-                        class="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Alfajores</span>
-                    <h1 class="text-4xl md:text-6xl font-black text-white mb-2">Rural Alfajores Artesanales</h1>
+                        class="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Tecnología</span>
+                    <h1 class="text-4xl md:text-6xl font-black text-white mb-2">Fonos Argentina</h1>
                     <div class="flex items-center gap-4 text-white/90 text-sm font-medium">
                         <span><i class="fa-solid fa-star text-yellow-400"></i> Nuevo</span>
                         <span>•</span>
@@ -90,37 +90,88 @@
 
     <!-- Menu Section -->
     <section class="container mx-auto px-6 py-12">
-        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><i class="fa-solid fa-cookie-bite text-primary"></i>
-            Nuestros Alfajores</h2>
+        <!-- Almacenamiento -->
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><i class="fa-solid fa-memory text-primary"></i>
+            Almacenamiento</h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
-            <!-- Item -->
             <div
                 class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
                 <div class="w-24 h-24 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
                         class="fa-solid fa-camera text-gray-300 text-2xl"></i></div>
                 <div class="flex-grow">
                     <div class="flex justify-between items-start">
-                        <h3 class="text-lg font-bold text-dark">Clásicos Dulce de Leche</h3>
-                        <span class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 9.600</span>
+                        <h3 class="text-lg font-bold text-dark">Memoria SanDisk</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 14.000</span>
+                    </div><button onclick="document.getElementById('menu-download-btn').click()"
+                        class="w-full mt-4 bg-gray-100 hover:bg-dark text-dark hover:text-white font-bold py-2 rounded-lg transition-all text-sm">Pedir
+                        en la App</button>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-24 h-24 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-camera text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Memoria SanDisk 32gb</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 10.000</span>
+                    </div><button onclick="document.getElementById('menu-download-btn').click()"
+                        class="w-full mt-4 bg-gray-100 hover:bg-dark text-dark hover:text-white font-bold py-2 rounded-lg transition-all text-sm">Pedir
+                        en la App</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carga -->
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><i
+                class="fa-solid fa-charging-station text-primary"></i> Carga</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-24 h-24 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-camera text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Cable tipo C</h3>
+                        <span class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.000</span>
                     </div>
-                    <p class="text-sm text-gray-500 mt-1">caja de 6 alfajores de dulce de leche con baño de chocolate
-                        semiamargo.</p>
+                    <p class="text-sm text-gray-500 mt-1">Cable tipo C</p>
                     <button onclick="document.getElementById('menu-download-btn').click()"
                         class="w-full mt-4 bg-gray-100 hover:bg-dark text-dark hover:text-white font-bold py-2 rounded-lg transition-all text-sm">Pedir
                         en la App</button>
                 </div>
             </div>
-            <!-- Item -->
+        </div>
+
+        <!-- Auriculares -->
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3"><i class="fa-solid fa-headphones text-primary"></i>
+            Auriculares</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
             <div
                 class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
                 <div class="w-24 h-24 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
                         class="fa-solid fa-camera text-gray-300 text-2xl"></i></div>
                 <div class="flex-grow">
                     <div class="flex justify-between items-start">
-                        <h3 class="text-lg font-bold text-dark">ALFAJORES SURTIDOS x 6 unidades</h3>
-                        <span class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 12.000</span>
+                        <h3 class="text-lg font-bold text-dark">Auriculares Inalámbricos bluetooth</h3>
+                        <span class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 8.000</span>
                     </div>
-                    <p class="text-sm text-gray-500 mt-1">Promo caja de 6 alfajores surtidos</p>
+                    <p class="text-sm text-gray-500 mt-1">Auriculares casco</p>
+                    <button onclick="document.getElementById('menu-download-btn').click()"
+                        class="w-full mt-4 bg-gray-100 hover:bg-dark text-dark hover:text-white font-bold py-2 rounded-lg transition-all text-sm">Pedir
+                        en la App</button>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-24 h-24 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-camera text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Auriculares bluetooth</h3>
+                        <span class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 15.000</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-1">Auriculares pequeños</p>
                     <button onclick="document.getElementById('menu-download-btn').click()"
                         class="w-full mt-4 bg-gray-100 hover:bg-dark text-dark hover:text-white font-bold py-2 rounded-lg transition-all text-sm">Pedir
                         en la App</button>
@@ -131,8 +182,8 @@
 
     <!-- Footer Component -->
     <div id="footer-placeholder"></div>
-    <script src="loadComponents.js"></script>
-    <script src="main.js"></script>
+    <script src="../loadComponents.js"></script>
+    <script src="../main.js"></script>
 </body>
 
 </html>

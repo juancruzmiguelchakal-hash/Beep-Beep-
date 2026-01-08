@@ -8,13 +8,39 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadHeader() {
+    const isSubfolder = window.location.pathname.includes('/menus/');
+    const basePath = isSubfolder ? '../' : '';
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (!headerPlaceholder) return;
 
-    fetch('header.html')
+    fetch(basePath + 'header.html')
         .then(response => response.text())
         .then(html => {
             headerPlaceholder.innerHTML = html.trim();
+
+            // Fix relative links if we are in a subfolder
+            if (isSubfolder) {
+                const links = headerPlaceholder.querySelectorAll('a');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    // Only rewrite relative links that don't start with http, //, #, or mailto
+                    if (href && !href.startsWith('http') && !href.startsWith('//') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+                        link.setAttribute('href', '../' + href);
+                    }
+                });
+
+                // Fix image sources in header
+                const images = headerPlaceholder.querySelectorAll('img');
+                images.forEach(img => {
+                    const src = img.getAttribute('src');
+                    if (src && !src.startsWith('http') && !src.startsWith('//') && !src.startsWith('data:')) {
+                        // If src already starts with ./, remove it to avoid ./../
+                        const cleanSrc = src.replace(/^\.\//, '');
+                        img.setAttribute('src', '../' + cleanSrc);
+                    }
+                });
+            }
+
             // Initialize components that depend on header content
             initMobileMenu();
             initDownloadDropdown();
@@ -26,13 +52,36 @@ function loadHeader() {
 }
 
 function loadFooter() {
+    const isSubfolder = window.location.pathname.includes('/menus/');
+    const basePath = isSubfolder ? '../' : '';
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (!footerPlaceholder) return;
 
-    fetch('footer.html')
+    fetch(basePath + 'footer.html')
         .then(response => response.text())
         .then(html => {
             footerPlaceholder.innerHTML = html.trim();
+
+            // Fix relative links in footer if we are in a subfolder
+            if (isSubfolder) {
+                const links = footerPlaceholder.querySelectorAll('a');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('http') && !href.startsWith('//') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+                        link.setAttribute('href', '../' + href);
+                    }
+                });
+
+                // Fix image sources in footer
+                const images = footerPlaceholder.querySelectorAll('img');
+                images.forEach(img => {
+                    const src = img.getAttribute('src');
+                    if (src && !src.startsWith('http') && !src.startsWith('//') && !src.startsWith('data:')) {
+                        const cleanSrc = src.replace(/^\.\//, '');
+                        img.setAttribute('src', '../' + cleanSrc);
+                    }
+                });
+            }
         })
         .catch(error => {
             console.error('Error loading footer:', error);

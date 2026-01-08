@@ -431,7 +431,7 @@ function renderSearchResults(results, container) {
                 <i class="fa-solid fa-chevron-right ml-auto text-primary text-xs opacity-0 group-hover:opacity-100 transition-all"></i>
             `;
             div.addEventListener('click', () => {
-                window.location.href = `menu-${item.id}.html`;
+                window.location.href = `menus/menu-${item.id}.html`;
             });
         } else {
             const dish = result.data;
@@ -447,7 +447,7 @@ function renderSearchResults(results, container) {
                 <i class="fa-solid fa-arrow-right ml-auto text-primary text-xs opacity-0 group-hover:opacity-100 transition-all"></i>
             `;
             div.addEventListener('click', () => {
-                window.location.href = `menu-${result.restaurantId}.html`;
+                window.location.href = `menus/menu-${result.restaurantId}.html`;
             });
         }
 
@@ -551,7 +551,7 @@ function renderGrid(items, container) {
 
         // Navigation Logic
         const goToMenu = () => {
-            window.location.href = `menu-${item.id}.html`;
+            window.location.href = `menus/menu-${item.id}.html`;
         };
         card.addEventListener('click', goToMenu);
 
@@ -579,7 +579,7 @@ function renderGrid(items, container) {
                     <p class="capitalize text-xs font-medium bg-gray-100 px-2 py-1 rounded text-gray-600">${item.category}</p>
                     <p>${item.cost === 0 ? 'Envío Gratis' : '$' + item.cost}</p>
                 </div>
-                <button onclick="event.stopPropagation(); window.location.href='menu-${item.id}.html'" class="w-full bg-dark text-white font-bold py-3 rounded-xl group-hover:bg-primary transition-colors flex items-center justify-center gap-2 opacity-90 group-hover:opacity-100 group-hover:shadow-lg">
+                <button onclick="event.stopPropagation(); window.location.href='menus/menu-${item.id}.html'" class="w-full bg-dark text-white font-bold py-3 rounded-xl group-hover:bg-primary transition-colors flex items-center justify-center gap-2 opacity-90 group-hover:opacity-100 group-hover:shadow-lg">
                     Ver Menú <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </button>
             </div>
