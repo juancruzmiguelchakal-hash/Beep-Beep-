@@ -309,6 +309,92 @@ const MOCK_DB = [
             sabado: 'Cerrado',
             domingo: '10:00 - 18:00'
         }
+    },
+    {
+        id: 'beep-beep-kiosco',
+        name: 'Beep Beep! Kiosco',
+        category: 'kiosco',
+        rating: 0.0,
+        time: 'Abierto ahora',
+        cost: 0,
+        img: './assets/images/logo.png',
+        hasPromo: true,
+        menu: [
+            // Chocolates y Alfajores
+            { name: 'Cofler Block Alfajor relleno de maní', price: 2100, category: 'chocolates' },
+            { name: 'Block Triple', price: 2100, category: 'chocolates' },
+            { name: 'Jorgito Alfajor clásico (dulce de leche)', price: 1000, category: 'alfajores' },
+            { name: 'Jorgito Alfajor chocolate', price: 1000, category: 'alfajores' },
+            { name: 'Alfajor Oreo Triple', price: 2700, category: 'alfajores' },
+            { name: 'Alfajor Milka Triple Mousse', price: 2700, category: 'alfajores' },
+            { name: 'Alfajor Chocolinas Chocotorta', price: 2100, category: 'alfajores' },
+            { name: 'Bon o Bon bombón chocolate blanco', price: 800, category: 'chocolates' },
+            { name: 'Bon o Bon bombón chocolate con leche', price: 800, category: 'chocolates' },
+            { name: 'Bon o Bon Chocolinas', price: 800, category: 'chocolates' },
+            { name: 'Cofler Chocolate con Leche', price: 4700, category: 'chocolates' },
+            { name: 'Cofler Block Chocolate en barra 38 g', price: 2600, category: 'chocolates' },
+            { name: 'KitKat chocolate con leche 41,5 g', price: 2000, category: 'chocolates' },
+            { name: 'Chocolate Shot con maní 35 g', price: 2900, category: 'chocolates' },
+            { name: 'Bocadito Marroc Felfort', price: 1300, category: 'chocolates' },
+            // Cigarrillos
+            { name: 'Marlboro Red Común Box 20', price: 5700, category: 'cigarrillos' },
+            { name: 'Marlboro Red Box', price: 6100, category: 'cigarrillos' },
+            { name: 'Marlboro Crafted Red Box', price: 3500, category: 'cigarrillos' },
+            { name: 'Marlboro Crafted Forward Box', price: 3500, category: 'cigarrillos' },
+            { name: 'Marlboro Crafted Forward Soft', price: 3100, category: 'cigarrillos' },
+            { name: 'Marlboro Crafted Red Común', price: 3100, category: 'cigarrillos' },
+            { name: 'Lucky Strike KS', price: 5200, category: 'cigarrillos' },
+            { name: 'Lucky Strike Origen Red', price: 3300, category: 'cigarrillos' },
+            { name: 'Lucky Strike Cool KS', price: 5200, category: 'cigarrillos' },
+            { name: 'Philip Morris Box 20', price: 5400, category: 'cigarrillos' },
+            { name: 'Philip Morris Blue Spin Box', price: 5400, category: 'cigarrillos' },
+            // Golosinas Frutales
+            { name: 'Mogul gomitas en rollo frutales', price: 800, category: 'golosinas' },
+            { name: 'Mogul gomitas piecito', price: 900, category: 'golosinas' },
+            { name: 'Mogul gomitas ositos', price: 900, category: 'golosinas' },
+            { name: 'Mogul gomitas Extreme ácido dulce', price: 800, category: 'golosinas' },
+            { name: 'Mogul caramelos rellenos Splash', price: 1100, category: 'golosinas' },
+            { name: 'Mogul caramelos Extreme Splash', price: 1100, category: 'golosinas' },
+            { name: 'Chicle Beldent menta 20 g', price: 1300, category: 'golosinas' },
+            { name: 'Chicle Topline menta', price: 1300, category: 'golosinas' },
+            // Higiene y Salud Sexual
+            { name: 'Tampones o.b. Siempre Libre Mini x8', price: 3500, category: 'higiene' },
+            { name: 'Tampones o.b. Siempre Libre Medio x8', price: 3500, category: 'higiene' },
+            { name: 'Tampones o.b. Siempre Libre Super x8', price: 3500, category: 'higiene' },
+            { name: 'Toallitas Always Triple Protección Día x16', price: 6900, category: 'higiene' },
+            { name: 'Preservativos Prime Super Finos x3', price: 4100, category: 'farmacia' },
+            { name: 'Preservativos Prime Warming x3', price: 4100, category: 'farmacia' },
+            { name: 'Preservativos Prime Tachas x3', price: 4100, category: 'farmacia' },
+            { name: 'Preservativos Prime Texturados x3', price: 4100, category: 'farmacia' },
+            { name: 'Preservativos Prime Stronger x3', price: 4100, category: 'farmacia' },
+            { name: 'Preservativos Prime Espermicida x3', price: 4500, category: 'farmacia' },
+            { name: 'Preservativos Prime Extra Lubricado x3', price: 4900, category: 'farmacia' },
+            { name: 'Preservativos Tulipán Súper Fino', price: 3200, category: 'farmacia' },
+            { name: 'Preservativos Tulipán Ultra Resistente', price: 3200, category: 'farmacia' },
+            { name: 'Preservativos Tulipán Texturados', price: 3200, category: 'farmacia' },
+            { name: 'Preservativos Tulipán Ultrafino', price: 3200, category: 'farmacia' },
+            // Helado y Hielo
+            { name: 'Cassata Grido x8', price: 11900, category: 'helados' },
+            { name: 'Bombón Crocante x8', price: 14300, category: 'helados' },
+            { name: 'Bombón Escocés x8', price: 15900, category: 'helados' },
+            { name: 'Torta helada frutilla Grido', price: 18000, category: 'helados' },
+            { name: 'Palito bombón x10', price: 8500, category: 'helados' },
+            { name: 'Palito frutal limón x20', price: 15500, category: 'helados' },
+            { name: 'Palito frutal frutilla x20', price: 15500, category: 'helados' },
+            { name: 'Palito frutal naranja x20', price: 15500, category: 'helados' },
+            { name: 'Bolsa de hielo 4 kg', price: 5000, category: 'hielo' },
+            // Varios
+            { name: 'Alikal x1 unidad', price: 1050, category: 'farmacia' }
+        ],
+        schedule: {
+            lunes: '18:00 - 23:00',
+            martes: '18:00 - 23:00',
+            miercoles: '18:00 - 23:00',
+            jueves: '18:00 - 23:55',
+            viernes: '18:00 - 23:55',
+            sabado: '12:00 - 23:55',
+            domingo: '12:00 - 22:00'
+        }
     }
 ];
 

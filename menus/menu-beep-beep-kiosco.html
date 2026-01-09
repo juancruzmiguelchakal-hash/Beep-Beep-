@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beep Beep! Kiosco - Menú | BeepBeep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#E31B23', dark: '#1A1A1A', light: '#F8F8F8', grey: '#E0E0E0' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    borderRadius: { 'xl': '24px' }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-light font-sans text-dark antialiased">
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+    <!-- Restaurant Hero -->
+    <header class="relative h-[50vh] min-h-[400px]">
+        <div class="absolute inset-0 bg-gray-900 bg-cover bg-center"
+            style="background-image: url('../assets/images/logo.png');">
+            <!-- Placeholder image or generic pattern -->
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-full p-8 md:p-12">
+            <div class="container mx-auto flex flex-col md:flex-row items-end justify-between gap-6">
+                <div>
+                    <span
+                        class="bg-primary text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Kiosco</span>
+                    <h1 class="text-4xl md:text-6xl font-black text-white mb-2">Beep Beep! Kiosco</h1>
+                    <div class="flex items-center gap-4 text-white/90 text-sm font-medium">
+                        <span><i class="fa-solid fa-star text-yellow-400"></i> Nuevo</span>
+                        <span>•</span>
+                        <span><i class="fa-solid fa-clock"></i> Abierto hoy: 18:00 a 23:55</span>
+                        <span>•</span>
+                        <span><i class="fa-solid fa-motorcycle"></i> Consultar envío</span>
+                    </div>
+                </div>
+                <!-- Unified Download Button -->
+                <div class="relative">
+                    <button id="menu-download-btn"
+                        class="bg-primary hover:bg-red-600 text-white font-bold py-4 px-8 rounded-xl shadow-[0_0_20px_rgba(227,27,35,0.4)] hover:shadow-[0_0_30px_rgba(227,27,35,0.6)] hover:scale-105 transition-all text-lg flex items-center gap-3">
+                        Pedí YA <i class="fa-solid fa-mobile-screen-button"></i>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div id="menu-download-dropdown"
+                        class="hidden absolute top-full right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50 animate-fade-in-up">
+                        <div class="p-2">
+                            <a href="https://apps.apple.com/ar/app/beepbeep-delivery-online/id6752507939"
+                                target="_blank"
+                                class="flex items-center gap-3 p-4 rounded-lg hover:bg-gray-50 transition-colors group">
+                                <i
+                                    class="fa-brands fa-apple text-2xl text-gray-700 group-hover:text-primary transition-colors"></i>
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-dark">Descargar para iPhone</p>
+                                    <p class="text-xs text-gray-500">App Store</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-gray-400 text-xs"></i>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.beepbeepdeliverygroup.app"
+                                target="_blank"
+                                class="flex items-center gap-3 p-4 rounded-lg hover:bg-gray-50 transition-colors group">
+                                <i
+                                    class="fa-brands fa-google-play text-2xl text-gray-700 group-hover:text-primary transition-colors"></i>
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-dark">Descargar para Android</p>
+                                    <p class="text-xs text-gray-500">Play Store</p>
+                                </div>
+                                <i class="fa-solid fa-chevron-right text-gray-400 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="container mx-auto px-6 py-12">
+
+        <!-- Chocolates y Alfajores -->
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" id="chocolates"><i
+                class="fa-solid fa-cookie-bite text-primary"></i> Chocolates y Alfajores</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <!-- Items -->
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Cofler Block Alfajor relleno de maní</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 2.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Block Triple</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 2.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Jorgito Alfajor clásico (dulce de leche)</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 1.000</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Jorgito Alfajor chocolate</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 1.000</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Alfajor Oreo Triple</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 2.700</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Alfajor Milka Triple Mousse</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 2.700</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Alfajor Chocolinas Chocotorta</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 2.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Bon o Bon bombón chocolate blanco</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 800</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Bon o Bon bombón chocolate con leche</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 800</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Bon o Bon Chocolinas</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 800</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Cofler Chocolate con Leche</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 4.700</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Cofler Block Chocolate en barra 38 g</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 2.600</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">KitKat chocolate con leche 41,5 g</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 2.000</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Chocolate Shot con maní 35 g</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 2.900</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-cookie-bite text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Bocadito Marroc Felfort</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 1.300</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cigarrillos -->
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" id="cigarrillos"><i
+                class="fa-solid fa-smoking text-primary"></i> Cigarrillos</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <!-- Items -->
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Marlboro Red Común Box 20</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 5.700</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Marlboro Red Box</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 6.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Marlboro Crafted Red Box</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.500</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Marlboro Crafted Forward Box</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.500</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Marlboro Crafted Forward Soft</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Marlboro Crafted Red Común</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Lucky Strike KS</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 5.200</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Lucky Strike Origen Red</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.300</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Lucky Strike Cool KS</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 5.200</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Philip Morris Box 20</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 5.400</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-smoking text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Philip Morris Blue Spin Box</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 5.400</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Golosinas Frutales -->
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" id="golosinas"><i
+                class="fa-solid fa-candy-cane text-primary"></i> Golosinas Frutales</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <!-- Items -->
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-candy-cane text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Mogul gomitas en rollo frutales</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 800</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-candy-cane text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Mogul gomitas piecito</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 900</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-candy-cane text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Mogul gomitas ositos</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 900</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-candy-cane text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Mogul gomitas Extreme ácido dulce</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 800</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-candy-cane text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Mogul caramelos rellenos Splash</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 1.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-candy-cane text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Mogul caramelos Extreme Splash</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 1.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-candy-cane text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Chicle Beldent menta 20 g</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 1.300</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-candy-cane text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Chicle Topline menta</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 1.300</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Higiene y Salud Sexual -->
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" id="higiene"><i
+                class="fa-solid fa-heart-pulse text-primary"></i> Higiene y Salud Sexual</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <!-- Items -->
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Tampones o.b. Siempre Libre Mini x8</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.500</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Tampones o.b. Siempre Libre Medio x8</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.500</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Tampones o.b. Siempre Libre Super x8</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.500</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Toallitas Always Triple Protección Día x16</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 6.900</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Prime Super Finos x3</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 4.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Prime Warming x3</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 4.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Prime Tachas x3</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 4.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Prime Texturados x3</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 4.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Prime Stronger x3</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 4.100</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Prime Espermicida x3</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 4.500</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Prime Extra Lubricado x3</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 4.900</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Tulipán Súper Fino</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.200</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Tulipán Ultra Resistente</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.200</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Tulipán Texturados</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.200</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-heart-pulse text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Preservativos Tulipán Ultrafino</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 3.200</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Helado y Hielo -->
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" id="helado"><i
+                class="fa-solid fa-ice-cream text-primary"></i> Helado y Hielo</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-ice-cream text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Cassata Grido x8</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 11.900</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-ice-cream text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Bombón Crocante x8</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 14.300</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-ice-cream text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Bombón Escocés x8</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 15.900</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-ice-cream text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Torta helada frutilla Grido</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 18.000</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-ice-cream text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Palito bombón x10</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 8.500</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-ice-cream text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Palito frutal limón x20</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 15.500</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-ice-cream text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Palito frutal frutilla x20</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 15.500</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-ice-cream text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Palito frutal naranja x20</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 15.500</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-snowflake text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Bolsa de hielo 4 kg</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 5.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Varios -->
+        <h2 class="text-3xl font-bold mb-8 flex items-center gap-3" id="varios"><i
+                class="fa-solid fa-basket-shopping text-primary"></i> Varios</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+            <!-- Items -->
+            <div
+                class="bg-white p-4 rounded-[24px] shadow-lg border border-gray-100 hover:border-primary/20 transition-all group flex gap-4 items-center">
+                <div class="w-16 h-16 rounded-xl bg-gray-100 flex-shrink-0 flex items-center justify-center"><i
+                        class="fa-solid fa-basket-shopping text-gray-300 text-2xl"></i></div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-dark">Alikal x1 unidad</h3><span
+                            class="text-lg font-black text-primary whitespace-nowrap pl-4">AR$ 1.050</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+    <script src="../loadComponents.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>
