@@ -317,7 +317,7 @@ const MOCK_DB = [
         rating: 0.0,
         time: 'Abierto ahora',
         cost: 0,
-        img: './assets/images/logo.png',
+        img: './assets/images/comercios/Beep Beep Kiosco/beepbeepkiosco.jpeg',
         hasPromo: true,
         menu: [
             // Chocolates y Alfajores
